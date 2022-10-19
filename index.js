@@ -1,7 +1,5 @@
 const Discord = require('discord.js')
 require("dotenv").config()
-const TOKEN = 'ODU2OTA0MzM1NTgwNzI1Mjkw.GEUWPD.FYnnAqweMkcc22rmTJFyR1zml1a1uO6KPs_N8o'
-
 const client = new Discord.Client({
 	intents: [
 		"GuildMessages",
@@ -25,5 +23,24 @@ client.on('messageCreate', function(msg){
     }
 })
 
+client.on('messageCreate', function(msg){
+    if (msg.content === 'el regreso...'){
+        msg.reply({
+            content: '...del rey B)'})
+    }
+})
+client.on('messageCreate', function(msg){
+    if (msg.content === 'dios'){
+        msg.reply({
+            content: 'MÍO'})
+    }
+})
+
+const welcomeChannelId = "760247663139618826"
+
+
+client.on("guildMemberAdd",  (member)=>{
+	member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Bienvenide peterete https://media.discordapp.net/attachments/856915121988960308/1032375398291472494/mental-illness.gif`)
+})
 
 client.login(process.env.TOKEN)
