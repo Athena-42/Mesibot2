@@ -1,4 +1,6 @@
 const Discord = require('discord.js')
+const express = require('express');
+const app = express();
 require("dotenv").config()
 const client = new Discord.Client({
 	intents: [
@@ -43,4 +45,10 @@ client.on("guildMemberAdd",  (member)=>{
 	member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Bienvenide peterete https://media.discordapp.net/attachments/856915121988960308/1032375398291472494/mental-illness.gif`)
 })
 
+app.get('/', (req,res)=>{
+    res.send("bot running")})
+
 client.login(process.env.TOKEN)
+
+app.listen(process.env.PORT || 3000, ()=> console.log("El servidor está corriendo"))
+
