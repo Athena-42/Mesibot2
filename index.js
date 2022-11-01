@@ -12,8 +12,8 @@ const client = new Discord.Client({
 	],
 });
 
-client.on('ready', (req,res)=>{
-    res.send('El bot arranca por la derecha')
+client.on('ready', ()=>{
+    console.log('El bot arranca por la derecha')
 })
 
 client.on('messageCreate', function(msg){
