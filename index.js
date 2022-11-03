@@ -1,4 +1,7 @@
 const Discord = require('discord.js')
+const respond = require('./middlewares/chat-commands')
+const welcome = require('./middlewares/welcome-message')
+const commands = require('./middlewares/commands')
 require("dotenv").config()
 const bot = new Discord.Client({
 	intents: [
@@ -13,35 +16,24 @@ const bot = new Discord.Client({
 });
 
 bot.on('ready', ()=>{
-    console.log('El bot arranca por la derecha')
+    console.log('El bot está listo')
 })
 
-bot.on('messageCreate', function(msg){
-    if (msg.content === 'ping'){
-        msg.reply({
-            content: 'pong'})
+//Message responses
+
+bot.on('messageCreate', respond)
+
+//welcome message
+bot.on("guildMemberAdd", welcome)
+
+//Comandos con prefijo
+
+const PREFIX = "+";
+
+bot.on('messageCreate', function(message) {
+    if(message.content[0] === PREFIX) {
+         commands(message);
     }
-})
-
-bot.on('messageCreate', function(msg){
-    if (msg.content === 'el regreso...'){
-        msg.reply({
-            content: '...del rey B)'})
-    }
-})
-bot.on('messageCreate', function(msg){
-    if (msg.content === 'dios'){
-        msg.reply({
-            content: 'MÍO'})
-    }
-})
-
-const welcomeChannelId = "760247663139618826"
-
-
-bot.on("guildMemberAdd",  (member)=>{
-	member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Bienvenide peterete https://media.discordapp.net/attachments/856915121988960308/1032375398291472494/mental-illness.gif`)
-})
+    });
 
 bot.login(process.env.TOKEN)
-

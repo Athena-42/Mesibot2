@@ -1,7 +1,6 @@
 {
   "name": "mesibot2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,10 +13,22 @@
     "canvas": "^2.10.1",
     "dependencies": "^0.0.1",
     "discord.js": "^14.6.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "mathjs": "^11.3.2",
+    "path": "^0.12.7"
   },
   "engines": {
     "node": "16.15.0",
     "npm": "8.5.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Athena-42/Mesibot2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Athena-42/Mesibot2/issues"
+  },
+  "homepage": "https://github.com/Athena-42/Mesibot2#readme",
+  "description": ""
 }
