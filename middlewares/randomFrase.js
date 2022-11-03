@@ -9,5 +9,4 @@ console.log(n)
 frase = frases[n]
 return frase
 }
-console.log(randomFrase())
 module.exports = randomFrase;
