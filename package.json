@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Sofi",
@@ -20,7 +21,3 @@
     "npm": "8.5.5"
   }
   }
-<<<<<<< HEAD
-}
-=======
->>>>>>> 4fc0dccfc9134872c97f68658d3ef18695885b65
