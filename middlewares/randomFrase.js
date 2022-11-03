@@ -4,8 +4,9 @@ const path = require('path')
 const Math = require('mathjs')
 let frases = fs.readFileSync(path.join(__dirname,'../db/frases.json'))
 frases = JSON.parse(frases);
-randomFrase = frases[Math.randomInt(0, frases.length)]
-return randomFrase
+let n = Math.randomInt(0, frases.length)
+console.log(n)
+frase = frases[n]
+return frase
 }
-console.log(randomFrase())
 module.exports = randomFrase;
