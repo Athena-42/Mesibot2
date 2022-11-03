@@ -5,7 +5,9 @@ function commands(message){
     let params = message.content.substring(message.content.indexOf(' ') + 1, message.content.length);
 
     switch(command){
-        case 'addFrase': addFrase(params); console.log("frase añadida")
+        case 'addFrase':
+        case 'addfrase':    
+        addFrase(params); console.log("frase añadida")
             break
 
         default: break

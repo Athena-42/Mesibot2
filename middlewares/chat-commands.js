@@ -11,7 +11,9 @@ switch(msg.content){
     case 'dios': msg.reply({content: 'MÍO'});
     break;
 
-    case 'randomFrase': function randomFrase(){
+    case 'randomFrase': 
+    case 'randomfrase':
+    function randomFrase(){
         const fs = require('fs')
         const path = require('path')
         const Math = require('mathjs')
