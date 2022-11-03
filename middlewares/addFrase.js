@@ -8,6 +8,6 @@ console.log(typeof frases)
 nuevaFrase = frase
 frases.push(nuevaFrase)
 console.log(frases)
-fs.writeFileSync("frases/frases.json", JSON.stringify(frases))}
+fs.writeFileSync("db/frases.json", JSON.stringify(frases))}
 
 module.exports = addFrase
