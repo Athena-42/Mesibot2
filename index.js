@@ -1,7 +1,9 @@
 const Discord = require('discord.js')
-const respond = require('./middlewares/chat-commands')
+const chatCommands = require('./middlewares/chat-commands')
 const welcome = require('./middlewares/welcome-message')
 const commands = require('./middlewares/commands')
+const Database = require("@replit/database")
+const db = new Database()
 require("dotenv").config()
 const bot = new Discord.Client({
 	intents: [
@@ -21,7 +23,7 @@ bot.on('ready', ()=>{
 
 //Message responses
 
-bot.on('messageCreate', respond)
+bot.on('messageCreate', chatCommands)
 
 //welcome message
 bot.on("guildMemberAdd", welcome)
