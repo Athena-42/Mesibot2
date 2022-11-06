@@ -23,7 +23,8 @@ function commands(message){
         break;
         
         case 'listfrases':
-            message.reply({content: listFrases(message)})
+        case 'frases':    
+            message.reply({content: listFrases()})
         default: break;
 }
     }
